@@ -122,6 +122,9 @@ fi
 if [[ -e /opt/ros/galactic/setup.bash ]]; then
     source /opt/ros/galactic/setup.bash
 fi
+if [[ -e /opt/ros/humble/setup.bash ]]; then
+    source /opt/ros/humble/setup.bash
+fi
 
 export MYWLAN0IP=`ip a show $(ip a | grep -o -E "wl.*:" | sed -e "s/://g    ") | grep -o -E "([0-9]+\.){3}[0-9]+" | head -n1`
 export MYETH0IP=`ip a show $(ip a | grep -o -E "en.*:" | sed -e "s/://g"    ) | grep -o -E "([0-9]+\.){3}[0-9]+" | head -n1`
