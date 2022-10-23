@@ -28,17 +28,47 @@ git clone https://github.com/Tiryoh/rocker-ros-configs.git
 
 ### Dockerイメージをビルドしてワークスペースを初期化
 
+ROS 2 Foxyの場合
+
 ```
 cd ~/ros/rocker-ros-configs
-./build.sh
+./build.sh foxy
+```
+
+ROS 2 Galacticの場合
+
+```
+cd ~/ros/rocker-ros-configs
+./build.sh galactic
+```
+
+ROS 2 Humbleの場合
+
+```
+cd ~/ros/rocker-ros-configs
+./build.sh humble
 ```
 
 ## 使用方法
 
 Dockerコンテナを起動
 
+ROS 2 Foxyの場合
+
+```sh
+./launch.sh foxy
 ```
-./launch.sh
+
+ROS 2 Galacticの場合
+
+```sh
+./launch.sh galactic
+```
+
+ROS 2 Humbleの場合
+
+```sh
+./launch.sh humble
 ```
 
 ## License
