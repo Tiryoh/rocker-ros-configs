@@ -26,4 +26,7 @@ rocker $NVIDIA --x11 --user \
 	${SRC_DIR}/.gazebo:/home/$(whoami)/.gazebo \
 	${SRC_DIR}/.bashrc:/home/$(whoami)/.bashrc \
 	${SRC_DIR}/.inputrc:/home/$(whoami)/.inputrc \
+	${SRC_DIR}/.config/terminator:/home/$(whoami)/.config/terminator \
 	-- ${DOCKER_TAG}:${ROS_DISTRO}
+
+fi
