@@ -7,6 +7,7 @@ RUN apt-get update && \
 RUN mkdir -p /root/.config/terminator && \
     echo '[global_config]' | tee -a /root/.config/terminator/config && \
     echo '    dbus = "False"' | tee -a /root/.config/terminator/config
+RUN rm /etc/apt/apt.conf.d/docker-clean
 RUN apt-get update && \
     apt-get install -y --reinstall \
     ros-humble-ros2cli && \
