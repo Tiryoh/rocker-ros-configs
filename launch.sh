@@ -17,6 +17,22 @@ echo $ROS_DISTRO
 # --privileged is not recommended, but it is required to use --network=host for now
 # https://github.com/osrf/rocker/issues/13
 
+if [[ "$ROS_DISTRO" == "noetic" ]]; then
+
+rocker $NVIDIA --x11 --user \
+	--network=host --privileged \
+	-e SHELL=/bin/bash --volume \
+	${HOME}/.ssh:/home/$(whoami)/.ssh:ro \
+	${ROS_WS_ROOT_DIR}/${ROS_DISTRO}:/home/$(whoami)/catkin_ws \
+	${SRC_DIR}/.ros:/home/$(whoami)/.ros \
+	${SRC_DIR}/.gazebo:/home/$(whoami)/.gazebo \
+	${SRC_DIR}/.bashrc:/home/$(whoami)/.bashrc \
+	${SRC_DIR}/.inputrc:/home/$(whoami)/.inputrc \
+	${SRC_DIR}/.config/terminator:/home/$(whoami)/.config/terminator \
+	-- ${DOCKER_TAG}:${ROS_DISTRO}
+
+else
+
 rocker $NVIDIA --x11 --user \
 	--network=host --privileged \
 	-e SHELL=/bin/bash --volume \
