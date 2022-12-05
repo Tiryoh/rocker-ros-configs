@@ -25,5 +25,6 @@ RUN apt-get update && \
     ros-humble-gazebo-ros2-control \
     ros-humble-ros2-control \
     ros-humble-cartographer \
+    ros-humble-rqt-tf-tree \
     ros-humble-velodyne-gazebo-plugins && \
     rm -rf /var/lib/apt/lists/*
