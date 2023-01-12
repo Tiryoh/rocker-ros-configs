@@ -23,12 +23,13 @@ rocker $NVIDIA --x11 --user \
 	--network=host --privileged \
 	-e SHELL=/bin/bash --volume \
 	${HOME}/.ssh:/home/$(whoami)/.ssh:ro \
+	${HOME}/.gitconfig:/home/$(whoami)/.gitconfig:ro \
 	${ROS_WS_ROOT_DIR}/${ROS_DISTRO}:/home/$(whoami)/catkin_ws \
 	${SRC_DIR}/.ros:/home/$(whoami)/.ros \
 	${SRC_DIR}/.gazebo:/home/$(whoami)/.gazebo \
 	${SRC_DIR}/.bashrc:/home/$(whoami)/.bashrc \
 	${SRC_DIR}/.inputrc:/home/$(whoami)/.inputrc \
-	${SRC_DIR}/.config/terminator:/home/$(whoami)/.config/terminator \
+	${SRC_DIR}/.config:/home/$(whoami)/.config \
 	-- ${DOCKER_TAG}:${ROS_DISTRO}
 
 else
@@ -37,12 +38,13 @@ rocker $NVIDIA --x11 --user \
 	--network=host --privileged \
 	-e SHELL=/bin/bash --volume \
 	${HOME}/.ssh:/home/$(whoami)/.ssh:ro \
+	${HOME}/.gitconfig:/home/$(whoami)/.gitconfig:ro \
 	${ROS_WS_ROOT_DIR}/${ROS_DISTRO}:/home/$(whoami)/ros2_ws \
 	${SRC_DIR}/.ros:/home/$(whoami)/.ros \
 	${SRC_DIR}/.gazebo:/home/$(whoami)/.gazebo \
 	${SRC_DIR}/.bashrc:/home/$(whoami)/.bashrc \
 	${SRC_DIR}/.inputrc:/home/$(whoami)/.inputrc \
-	${SRC_DIR}/.config/terminator:/home/$(whoami)/.config/terminator \
+	${SRC_DIR}/.config:/home/$(whoami)/.config \
 	-- ${DOCKER_TAG}:${ROS_DISTRO}
 
 fi
