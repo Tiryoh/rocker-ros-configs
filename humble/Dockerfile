@@ -24,6 +24,7 @@ RUN apt-get update && \
     ros-humble-robot-localization \
     ros-humble-gazebo-ros2-control \
     ros-humble-ros2-control \
+    ros-humble-ros2-controllers \
     ros-humble-cartographer \
     ros-humble-rqt-tf-tree \
     ros-humble-velodyne-gazebo-plugins && \

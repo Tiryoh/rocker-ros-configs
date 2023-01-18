@@ -135,3 +135,4 @@ export MYETH0IP=`ip a show $(ip a | grep -o -E "en.*:" | sed -e "s/://g"    ) | 
 #export ROS_IP=$(echo $MYETH0IP $MYWLAN0IP 127.0.0.1 | cut -d' ' -f1)
 #export ROS_MASTER_URI=http://$ROS_IP:11311
 #export ROS_DOMAIN_ID=3
+export TURTLEBOT3_MODEL=burger
