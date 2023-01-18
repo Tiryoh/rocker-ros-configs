@@ -3,7 +3,7 @@ set -eu
 
 ROS_WS_ROOT_DIR=$(cd $(dirname ${BASH_SOURCE:-$0})/../; pwd)
 SRC_DIR=$(cd $(dirname ${BASH_SOURCE:-$0}); pwd)
-DOCKER_TAG="ghcr.io/tiryoh/ros"
+DOCKER_TAG="ghcr.io/tiryoh/rocker/ros"
 ROS_DISTRO=${1:-'galactic'}
 
 echo $ROS_DISTRO
