@@ -116,6 +116,10 @@ if ! shopt -oq posix; then
 	fi
 fi
 
+if [[ -e /opt/ros/noetic/setup.bash ]]; then
+    source /opt/ros/noetic/setup.bash
+    source `catkin locate --shell-verbs`
+fi
 if [[ -e /opt/ros/foxy/setup.bash ]]; then
     source /opt/ros/foxy/setup.bash
 fi
@@ -127,6 +131,9 @@ if [[ -e /opt/ros/humble/setup.bash ]]; then
 fi
 if [[ -e /usr/share/colcon_argcomplete/hook/colcon-argcomplete.bash ]]; then
     source /usr/share/colcon_argcomplete/hook/colcon-argcomplete.bash
+fi
+if [[ -e /usr/share/colcon_cd/function/colcon_cd.sh ]]; then
+    source /usr/share/colcon_cd/function/colcon_cd.sh
 fi
 
 export MYWLAN0IP=`ip a show $(ip a | grep -o -E "wl.*:" | sed -e "s/://g    ") | grep -o -E "([0-9]+\.){3}[0-9]+" | head -n1`
