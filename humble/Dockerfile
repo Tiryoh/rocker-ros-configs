@@ -14,18 +14,20 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/*
 RUN apt-get update && \
     apt-get install -y \
-    ros-humble-realtime-tools \
+    python3-colcon-clean \
+    ros-humble-cartographer \
+    ros-humble-cartographer-ros \
     ros-humble-controller-interface \
-    ros-humble-control-msgs \
-    ros-humble-hardware-interface \
     ros-humble-controller-manager \
-    ros-humble-ros2-control-test-assets \
-    ros-humble-nav2-bringup \
-    ros-humble-robot-localization \
+    ros-humble-control-msgs \
     ros-humble-gazebo-ros2-control \
+    ros-humble-hardware-interface \
+    ros-humble-nav2-bringup \
+    ros-humble-realtime-tools \
+    ros-humble-robot-localization \
     ros-humble-ros2-control \
     ros-humble-ros2-controllers \
-    ros-humble-cartographer \
+    ros-humble-ros2-control-test-assets \
     ros-humble-rqt-tf-tree \
     ros-humble-velodyne-gazebo-plugins && \
     rm -rf /var/lib/apt/lists/*
